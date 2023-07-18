@@ -1,9 +1,11 @@
 "use client";
 import { useGetUsersQuery } from "@/redux/features/api/userSlice";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
-  const { isLoading, data, isError } = useGetUsersQuery(null);
+  // const [request, setRequest] = useState(true);
+  const { isLoading, data, isError, refetch } = useGetUsersQuery(null);
 
   if (isLoading) return <span>Loading...</span>;
 
@@ -16,6 +18,12 @@ export default function Home() {
 
       <div>
         <h2>Album </h2>
+        <button
+          className="bg-blue-500 p-3 text-sm rounded-full mt-2 mb-3"
+          onClick={refetch}
+        >
+          Refetch Data
+        </button>
         <div className="grid grid-cols-3 gap-3">
           {data &&
             data.map((item) => (

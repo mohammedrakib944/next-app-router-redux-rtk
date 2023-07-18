@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <ReduxProvider>
-          <div className="max-w-[990px] mx-auto">
+          <div className="max-w-[990px] px-5 pb-10 mx-auto">
             <Navbar />
 
             {children}

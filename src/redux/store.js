@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { userSlice } from "./features/api/userSlice";
-import { setupListeners } from "@reduxjs/toolkit/dist/query";
+// import { setupListeners } from "@reduxjs/toolkit/dist/query";
 
 export const store = configureStore({
   reducer: {
@@ -10,4 +10,4 @@ export const store = configureStore({
     getDefaultMiddleware({}).concat([userSlice.middleware]),
 });
 
-setupListeners(store.dispatch);
+// setupListeners(store.dispatch);
